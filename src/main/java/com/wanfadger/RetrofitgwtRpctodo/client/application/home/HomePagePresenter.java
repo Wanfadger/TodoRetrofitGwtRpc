@@ -62,7 +62,8 @@ public class HomePagePresenter extends Presenter<HomePagePresenter.MyView, HomeP
 		this.dispatcher.execute(saveAction , new AsyncCallbackImpl<TodoResult>() {
 			@Override
 			public void onSuccess(TodoResult result) {
-			  SC.say("Successfully saved "+result.getTodo().getName());
+			  SC.say("Successfully saved ");
+			  getView().homePanel().getTodoForm().clearValues();
 			  fetchTodos();
 			}
 		});

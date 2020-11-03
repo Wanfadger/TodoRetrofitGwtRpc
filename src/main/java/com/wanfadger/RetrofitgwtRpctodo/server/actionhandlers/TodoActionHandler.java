@@ -29,7 +29,7 @@ public class TodoActionHandler implements ActionHandler<TodoAction , TodoResult>
 	
 	@Override
 	public TodoResult execute(TodoAction action, ExecutionContext context) throws ActionException {
-		TodoService service = RetrofitServiceGenerator.createService().create(TodoService.class);
+		TodoService service = RetrofitServiceGenerator.createService(TodoService.class);
 		
 		if(action.getCommand().equals(TodoActionCommands.FETCH_TODOS)) {
 			
@@ -52,9 +52,10 @@ public class TodoActionHandler implements ActionHandler<TodoAction , TodoResult>
 //					new Todo("5" , "todo 5"));
 //			
 			
-			
 			return new TodoResult(todos);
+			
 		}else if(action.getCommand().equals(TodoActionCommands.SAVE_TODO)) {
+			
 			Todo todo = null;
 			try {
 				Response<Todo> todoResponse = service.saveTodo(action.getTodo()).execute();
@@ -64,7 +65,7 @@ public class TodoActionHandler implements ActionHandler<TodoAction , TodoResult>
 				System.out.print("Error "+e.getMessage());
 			}
 			
-		  return new TodoResult();	
+		  return new TodoResult(todo);	
 		} else {
 			return null;
 		}
