@@ -1,7 +1,5 @@
 package com.wanfadger.RetrofitgwtRpctodo.client.application.home;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import com.google.gwt.core.client.GWT;
@@ -52,7 +50,6 @@ public class HomePagePresenter extends Presenter<HomePagePresenter.MyView, HomeP
     	super.onBind();
     	
     	fetchTodos();
-    	
     }
     
 	@Override

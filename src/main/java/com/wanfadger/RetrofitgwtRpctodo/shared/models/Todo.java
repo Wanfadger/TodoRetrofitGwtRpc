@@ -9,6 +9,8 @@ public class Todo implements IsSerializable  {
 
 	private String id;
 	private String name;
+	private String modifiedAt;
+	private String createdAt;
 	
 	public Todo() {
 		// TODO Auto-generated constructor stub
@@ -32,6 +34,32 @@ public class Todo implements IsSerializable  {
 	}
 	
 	
+	
+	
+	public String getModifiedAt() {
+		return modifiedAt;
+	}
+
+	public void setModifiedAt(String modifiedAt) {
+		this.modifiedAt = modifiedAt;
+	}
+
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(String createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public static ListGridRecord[] todoRecords() {
 		ListGridRecord[] records = new ListGridRecord[] {};
 		
